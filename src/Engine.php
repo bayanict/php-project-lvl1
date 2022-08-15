@@ -22,8 +22,3 @@ function greet($game)
 
     return $name;
 }
-
-function playGame()
-{
-
-}

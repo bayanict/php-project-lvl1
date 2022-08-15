@@ -11,7 +11,7 @@ function playCalc($name)
     $countRight = 0;
     while ($countRight < 3) {
         $operand1 = rand(1, 10);
-        $operand2 = rand(1,10);
+        $operand2 = rand(1, 10);
         $operators = ["sum" => "+", "min" => "-", "mult" => "*"];
         $operator = array_rand($operators, 1);
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
@@ -29,7 +29,7 @@ function playCalc($name)
         }
 
         line("Question: {$question}");
-        $answer = (integer) prompt("Your answer: ");
+        $answer = (int) prompt("Your answer: ");
         $right = $expect === $answer ? true : false;
         if ($right) {
             line("Correct!");
