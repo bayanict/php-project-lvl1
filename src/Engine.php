@@ -31,7 +31,7 @@ function greet(string $game)
     return $name;
 }
 
-function gcd(integer $first, integer $second)
+function gcd(int $first, int $second)
 {
     if ($second == 0) {
         return $first;
@@ -39,7 +39,7 @@ function gcd(integer $first, integer $second)
     return gcd($second, $first % $second);
 }
 
-function isPrime(integer $num)
+function isPrime(int $num)
 {
     if ($num == 1) {
         return false;
