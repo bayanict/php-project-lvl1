@@ -5,3 +5,5 @@
 <a href="https://asciinema.org/a/xePtSanjNDf1uoJFsvC4g7VoJ" target="_blank"><img src="https://asciinema.org/a/xePtSanjNDf1uoJFsvC4g7VoJ.svg" /></a>
 <h3>Brain-Calc</h3>
 <a href="https://asciinema.org/a/515014" target="_blank"><img src="https://asciinema.org/a/515014.svg" /></a>
+<h3>Brain-Gcd</h3>
+<a href="https://asciinema.org/a/Pndsi7mWqO0aylFRjDWSwc5iA" target="_blank"><img src="https://asciinema.org/a/Pndsi7mWqO0aylFRjDWSwc5iA.svg" /></a>
