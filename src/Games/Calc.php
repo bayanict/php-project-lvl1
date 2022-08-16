@@ -15,7 +15,7 @@ function playCalc(string $name)
         $operators = ["sum" => "+", "min" => "-", "mult" => "*"];
         $operator = array_rand($operators, 1);
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
-
+        $expect = 0;
         switch ($operators[$operator]) {
             case "+":
                 $expect = $operand1 + $operand2;
