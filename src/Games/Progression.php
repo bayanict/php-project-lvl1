@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
 
-function playProgression($name)
+function playProgression(string $name)
 {
     $countRight = 0;
     while ($countRight < 3) {
@@ -19,7 +19,7 @@ function playProgression($name)
             $last += $del;
         }
         $index = rand(0, 9);
-        $expect = (int) $nums[$index];
+        $expect = $nums[$index];
         $nums[$index] = "..";
         $question = implode(" ", $nums);
 

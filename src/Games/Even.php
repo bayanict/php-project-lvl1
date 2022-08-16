@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
 
-function playEven($name)
+function playEven(string $name)
 {
     $countRight = 0;
     while ($countRight < 3) {

@@ -7,7 +7,7 @@ use function cli\prompt;
 use function BrainGames\Engine\greet;
 use function BrainGames\Engine\gcd;
 
-function playGcd($name)
+function playGcd(string $name)
 {
     $countRight = 0;
     while ($countRight < 3) {

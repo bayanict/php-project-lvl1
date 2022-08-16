@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
 
-function playCalc($name)
+function playCalc(string $name)
 {
     $countRight = 0;
     while ($countRight < 3) {
@@ -30,7 +30,7 @@ function playCalc($name)
 
         line("Question: {$question}");
         $answer = (int) prompt("Your answer: ");
-        $right = $expect === $answer ? true : false;
+        $right = $expect === $answer;
         if ($right) {
             line("Correct!");
             $countRight += 1;

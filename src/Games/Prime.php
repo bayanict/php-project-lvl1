@@ -7,7 +7,7 @@ use function cli\prompt;
 use function BrainGames\Engine\greet;
 use function BrainGames\Engine\isPrime;
 
-function playPrime($name)
+function playPrime(string $name)
 {
     $countRight = 0;
     while ($countRight < 3) {

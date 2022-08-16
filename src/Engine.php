@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function greet($game)
+function greet(string $game)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -31,7 +31,7 @@ function greet($game)
     return $name;
 }
 
-function gcd($first, $second)
+function gcd(integer $first, integer $second)
 {
     if ($second == 0) {
         return $first;
@@ -39,7 +39,7 @@ function gcd($first, $second)
     return gcd($second, $first % $second);
 }
 
-function isPrime($num)
+function isPrime(integer $num)
 {
     if ($num == 1) {
         return false;
