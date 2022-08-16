@@ -10,6 +10,7 @@
             "src/Games/Calc.php",
             "src/Games/Gcd.php",
             "src/Games/Progression.php",
+            "src/Games/Prime.php",
             "src/Engine.php"
         ]
     },
