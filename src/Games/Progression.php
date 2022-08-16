@@ -18,8 +18,8 @@ function playProgression($name)
             $nums[] = $last;
             $last += $del;
         }
-        $index = rand(0,9);
-        $expect =(int) $nums[$index];
+        $index = rand(0, 9);
+        $expect = (int) $nums[$index];
         $nums[$index] = "..";
         $question = implode(" ", $nums);
 

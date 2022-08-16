@@ -42,4 +42,3 @@ function startPrime()
     $man = greet("prime");
     playPrime($man);
 }
-

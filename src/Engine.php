@@ -31,7 +31,8 @@ function greet($game)
     return $name;
 }
 
-function gcd($first, $second) {
+function gcd($first, $second)
+{
     if ($second == 0) {
         return $first;
     }
@@ -43,8 +44,7 @@ function isPrime($num)
     if ($num == 1) {
         return false;
     }
-    for ($i = 2; $i <= $num/2; $i++)
-    {
+    for ($i = 2; $i <= $num / 2; $i++) {
         if ($num % $i == 0) {
             return false;
         }
