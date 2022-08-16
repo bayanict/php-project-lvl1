@@ -8,6 +8,7 @@
             "src/Cli.php",
             "src/Games/Even.php",
             "src/Games/Calc.php",
+            "src/Games/Gcd.php",
             "src/Engine.php"
         ]
     },

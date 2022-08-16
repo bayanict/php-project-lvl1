@@ -18,7 +18,16 @@ function greet($game)
         case "calc":
             line("What is the result of the expression?");
             break;
+        case "gcd":
+            line("Find the greatest common divisor of given numbers.");
     }
 
     return $name;
+}
+
+function gcd($first, $second) {
+    if ($second == 0) {
+        return $first;
+    }
+    return gcd($second, $first % $second);
 }
