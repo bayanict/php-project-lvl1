@@ -21,8 +21,7 @@ function isPrime(int $num)
 
 function playPrime(string $name)
 {
-    $countRight = 0;
-    while ($countRight < 3) {
+    for ($i = 0; $i < 3; $i++) {
         $number = rand(1, 100);
         $question = $number;
 
@@ -31,10 +30,8 @@ function playPrime(string $name)
         $right = isPrime($number);
         if ($right && $answer === "yes") {
             line("Correct!");
-            $countRight += 1;
         } elseif (!$right && $answer === "no") {
             line("Correct!");
-            $countRight += 1;
         } else {
             if ($right) {
                 line("'{$answer}' is wrong answer ;(. Correct answer was 'yes'.");

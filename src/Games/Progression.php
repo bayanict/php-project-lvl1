@@ -8,13 +8,12 @@ use function BrainGames\Engine\greet;
 
 function playProgression(string $name)
 {
-    $countRight = 0;
-    while ($countRight < 3) {
+    for ($i = 0; $i < 3; $i++) {
         $start = rand(1, 20);
         $del = rand(1, 15);
         $last = $start;
         $nums = [];
-        for ($i = 0; $i < 10; $i++) {
+        for ($k = 0; $k < 10; $k++) {
             $nums[] = $last;
             $last += $del;
         }
@@ -28,7 +27,6 @@ function playProgression(string $name)
         $right = $expect === $answer;
         if ($right) {
             line("Correct!");
-            $countRight += 1;
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
             line("Let's try again, {$name}!");

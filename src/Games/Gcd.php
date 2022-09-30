@@ -16,8 +16,7 @@ function gcd(int $first, int $second)
 
 function playGcd(string $name)
 {
-    $countRight = 0;
-    while ($countRight < 3) {
+    for ($i = 0; $i < 3; $i++) {
         $operand1 = rand(1, 100);
         $operand2 = rand(1, 100);
         $question = "{$operand1} {$operand2}";
@@ -28,7 +27,6 @@ function playGcd(string $name)
         $right = $expect === $answer ? true : false;
         if ($right) {
             line("Correct!");
-            $countRight += 1;
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
             line("Let's try again, {$name}!");

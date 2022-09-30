@@ -8,8 +8,7 @@ use function BrainGames\Engine\greet;
 
 function playCalc(string $name)
 {
-    $countRight = 0;
-    while ($countRight < 3) {
+    for ($i = 0; $i < 3; $i++) {
         $operand1 = rand(1, 10);
         $operand2 = rand(1, 10);
         $operators = ["sum" => "+", "min" => "-", "mult" => "*"];
@@ -29,11 +28,10 @@ function playCalc(string $name)
         }
 
         line("Question: {$question}");
-        $answer = (int) prompt("Your answer: ");
+        $answer = (int) prompt("Your answer");
         $right = $expect === $answer;
         if ($right) {
             line("Correct!");
-            $countRight += 1;
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
             line("Let's try again, {$name}!");
