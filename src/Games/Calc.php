@@ -6,6 +6,20 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
 
+function getExpected($array, $key, $value1, $value2)
+{
+    switch ($array[$key]) {
+        case "+":
+            return $value1 + $value2;
+        case "-":
+            return $value1 - $value2;
+        case "*":
+            return $value1 * $value2;
+        default:
+            throw new Error(`Unknown operator: {$array[$key]}!`);
+    }
+}
+
 function playCalc(string $name)
 {
     for ($i = 0; $i < 3; $i++) {
@@ -14,22 +28,13 @@ function playCalc(string $name)
         $operators = ["sum" => "+", "min" => "-", "mult" => "*"];
         $operator = array_rand($operators, 1);
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
-        $expect = 0;
-        switch ($operators[$operator]) {
-            case "+":
-                $expect = $operand1 + $operand2;
-                break;
-            case "-":
-                $expect = $operand1 - $operand2;
-                break;
-            case "*":
-                $expect = $operand1 * $operand2;
-                break;
-        }
+
+        $expect = getExpected($operators, $operator, $operand1, $operand2);
 
         line("Question: {$question}");
         $answer = (int) prompt("Your answer");
         $right = $expect === $answer;
+        
         if ($right) {
             line("Correct!");
         } else {
