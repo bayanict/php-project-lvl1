@@ -30,24 +30,3 @@ function greet(string $game)
 
     return $name;
 }
-
-function gcd(int $first, int $second)
-{
-    if ($second == 0) {
-        return $first;
-    }
-    return gcd($second, $first % $second);
-}
-
-function isPrime(int $num)
-{
-    if ($num == 1) {
-        return false;
-    }
-    for ($i = 2; $i <= $num / 2; $i++) {
-        if ($num % $i == 0) {
-            return false;
-        }
-    }
-    return true;
-}

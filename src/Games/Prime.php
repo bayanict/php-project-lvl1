@@ -5,7 +5,19 @@ namespace BrainGames\Games\Prime;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
-use function BrainGames\Engine\isPrime;
+
+function isPrime(int $num)
+{
+    if ($num == 1) {
+        return false;
+    }
+    for ($i = 2; $i <= $num / 2; $i++) {
+        if ($num % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
 function playPrime(string $name)
 {

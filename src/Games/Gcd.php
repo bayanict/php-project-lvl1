@@ -5,7 +5,14 @@ namespace BrainGames\Games\Gcd;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
-use function BrainGames\Engine\gcd;
+
+function gcd(int $first, int $second)
+{
+    if ($second == 0) {
+        return $first;
+    }
+    return gcd($second, $first % $second);
+}
 
 function playGcd(string $name)
 {
