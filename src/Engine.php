@@ -26,6 +26,8 @@ function greet(string $game)
             break;
         case "prime":
             line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
+        default:
+            throw new Error(`Unknown game: {$game}!`);
     }
 
     return $name;
