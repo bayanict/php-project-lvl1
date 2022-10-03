@@ -26,7 +26,7 @@ function playCalc(string $name)
         $operand1 = rand(1, 10);
         $operand2 = rand(1, 10);
         $operators = ["sum" => "+", "min" => "-", "mult" => "*"];
-        $operator = array_rand($operators, 1);
+        $operator = array_rand($operators);
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
 
         $expect = getExpected($operators, $operator, $operand1, $operand2);
