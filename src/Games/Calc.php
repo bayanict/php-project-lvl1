@@ -34,13 +34,13 @@ function playCalc(string $name)
         line("Question: {$question}");
         $answer = (int) prompt("Your answer");
         $right = $expect === $answer;
-        
+
         if (!$right) {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
             line("Let's try again, {$name}!");
             return false;
         }
-         
+
         line("Correct!");
     }
     line("Congratulations, {$name}!");
