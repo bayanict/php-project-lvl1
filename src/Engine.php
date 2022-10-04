@@ -28,7 +28,7 @@ function greet(string $game)
             line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
             break;
         default:
-            throw new Exeption(`Unknown game: {$game}!`);
+            throw new \Exception(`Unknown game: {$game}!`);
     }
 
     return $name;

@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
 
-function getExpected(array $array, string $key, string $value1, string $value2)
+function getExpected(array $array, string $key, int $value1, int $value2)
 {
     switch ($array[$key]) {
         case "+":
@@ -16,7 +16,7 @@ function getExpected(array $array, string $key, string $value1, string $value2)
         case "*":
             return $value1 * $value2;
         default:
-            throw new Exception('Unknown operator: {$array[$key]}!');
+            throw new \Exception('Unknown operator: {$array[$key]}!');
     }
 }
 
