@@ -21,7 +21,6 @@ function playProgression(string $name)
         $expect = (string) $nums[$index];
         $nums[$index] = "..";
         $question = implode(" ", $nums);
-
         line("Question: {$question}");
         $answer = prompt("Your answer: ");
         $right = $expect === $answer;
