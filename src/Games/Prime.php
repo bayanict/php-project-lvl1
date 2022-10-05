@@ -27,17 +27,11 @@ function playPrime(string $name)
 
         line("Question: {$question}");
         $answer = prompt("Your answer: ");
-        $right = isPrime($number);
-        if ($right && $answer === "yes") {
-            line("Correct!");
-        } elseif (!$right && $answer === "no") {
+        $right = isPrime($number) ? "yes" : "no";
+        if ($right === $answer) {
             line("Correct!");
         } else {
-            if ($right) {
-                line("'{$answer}' is wrong answer ;(. Correct answer was 'yes'.");
-            } else {
-                line("'{$answer}' is wrong answer ;(. Correct answer was 'no'.");
-            }
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$right}'.");
             line("Let's try again, {$name}!");
             return false;
         }
