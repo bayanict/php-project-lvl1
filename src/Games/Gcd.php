@@ -20,10 +20,10 @@ function playGcd(string $name)
         $operand1 = rand(1, 100);
         $operand2 = rand(1, 100);
         $question = "{$operand1} {$operand2}";
-        $expect = gcd($operand1, $operand2);
+        $expect = (string) gcd($operand1, $operand2);
 
         line("Question: {$question}");
-        $answer = (int) prompt("Your answer: ");
+        $answer = prompt("Your answer: ");
         $right = $expect === $answer ? true : false;
         if ($right) {
             line("Correct!");

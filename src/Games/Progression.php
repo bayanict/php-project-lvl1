@@ -18,12 +18,12 @@ function playProgression(string $name)
             $last += $del;
         }
         $index = rand(0, 9);
-        $expect = $nums[$index];
+        $expect = (string) $nums[$index];
         $nums[$index] = "..";
         $question = implode(" ", $nums);
 
         line("Question: {$question}");
-        $answer = (int) prompt("Your answer: ");
+        $answer = prompt("Your answer: ");
         $right = $expect === $answer;
         if ($right) {
             line("Correct!");

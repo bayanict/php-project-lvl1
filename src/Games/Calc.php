@@ -29,10 +29,10 @@ function playCalc(string $name)
         $operator = array_rand($operators);
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
 
-        $expect = getExpected($operators, $operator, $operand1, $operand2);
+        $expect = (string) getExpected($operators, $operator, $operand1, $operand2);
 
         line("Question: {$question}");
-        $answer = (int) prompt("Your answer");
+        $answer = prompt("Your answer");
         $right = $expect === $answer;
 
         if (!$right) {
