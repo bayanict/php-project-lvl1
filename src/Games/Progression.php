@@ -9,13 +9,12 @@ use function BrainGames\Engine\greet;
 function playProgression(string $name)
 {
     for ($i = 0; $i < 3; $i++) {
-        $start = rand(1, 20);
-        $del = rand(1, 15);
-        $last = $start;
+        $base = rand(1, 20);
+        $delta = rand(1, 15);
         $nums = [];
         for ($k = 0; $k < 10; $k++) {
-            $nums[] = $last;
-            $last += $del;
+            $nums[] = $base;
+            $base += $delta;
         }
         $index = rand(0, 9);
         $expect = (string) $nums[$index];
