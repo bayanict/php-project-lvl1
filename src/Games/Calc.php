@@ -5,6 +5,7 @@ namespace BrainGames\Games\Calc;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
+use function BrainGames\Engine\playEngine;
 
 function getExpected(array $array, string $key, int $value1, int $value2)
 {
@@ -20,36 +21,29 @@ function getExpected(array $array, string $key, int $value1, int $value2)
     }
 }
 
-function playCalc(string $name)
+function prepareCalcData()
 {
-    for ($i = 0; $i < 3; $i++) {
+    $data = [];
+    $operators = ["sum" => "+", "min" => "-", "mult" => "*"];
+
+    while (count($data) < 3) {
         $operand1 = rand(1, 10);
         $operand2 = rand(1, 10);
-        $operators = ["sum" => "+", "min" => "-", "mult" => "*"];
         $operator = array_rand($operators);
+
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
-
         $expect = (string) getExpected($operators, $operator, $operand1, $operand2);
-
-        line("Question: {$question}");
-        $answer = prompt("Your answer");
-        $right = $expect === $answer;
-
-        if (!$right) {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
-            line("Let's try again, {$name}!");
-            return false;
+        if (array_key_exists($question, $data)) {
+            continue;
         }
-
-        line("Correct!");
+        $data[$question] = $expect;
     }
-    line("Congratulations, {$name}!");
-    return true;
+    return $data;
 }
 
 function startCalc()
 {
     $man = greet("calc");
     line("What is the result of the expression?");
-    playCalc($man);
+    playEngine(prepareCalcData(), $man);
 }

@@ -5,39 +5,36 @@ namespace BrainGames\Games\Progression;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
+use function BrainGames\Engine\playEngine;
 
-function playProgression(string $name)
+function prepareProgressionData()
 {
-    for ($i = 0; $i < 3; $i++) {
+    $data = [];
+    while (count($data) < 3) {
         $base = rand(1, 20);
         $delta = rand(1, 15);
-        $nums = [];
-        for ($k = 0; $k < 10; $k++) {
-            $nums[] = $base;
-            $base += $delta;
+        $progression = [$base];
+
+        while (count($progression) < 10) {
+            $progression[] = $progression[count($progression) - 1] + $delta;
         }
+
         $index = rand(0, 9);
-        $expect = (string) $nums[$index];
-        $nums[$index] = "..";
-        $question = implode(" ", $nums);
-        line("Question: {$question}");
-        $answer = prompt("Your answer: ");
-        $right = $expect === $answer;
-        if ($right) {
-            line("Correct!");
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
-            line("Let's try again, {$name}!");
-            return false;
+        $expect = (string) $progression[$index];
+        $progression[$index] = "..";
+        $question = implode(" ", $progression);
+
+        if (array_key_exists($question, $data)) {
+            continue;
         }
+        $data[$question] = $expect;
     }
-    line("Congratulations, {$name}!");
-    return true;
+    return $data;
 }
 
 function startProgression()
 {
     $man = greet("progression");
     line("What number is missing in the progression?");
-    playProgression($man);
+    playEngine(prepareProgressionData(), $man);
 }

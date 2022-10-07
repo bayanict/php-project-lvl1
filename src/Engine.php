@@ -12,3 +12,19 @@ function greet(string $game)
     line("Hello, %s!", $name);
     return $name;
 }
+
+function playEngine(array $preparedData, string $name)
+{
+    foreach ($preparedData as $question => $expect) {
+        line("Question: {$question}");
+        $answer = prompt("Your answer");
+        if ($expect === $answer) {
+            line("Correct!");
+        } else {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
+            line("Let's try again, {$name}!");
+            return null;
+        }
+    }
+    line("Congratulations, {$name}!");
+}
