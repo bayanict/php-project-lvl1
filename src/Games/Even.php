@@ -5,28 +5,29 @@ namespace BrainGames\Games\Even;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
+use function BrainGames\Engine\playEngine;
 
-function playEven(string $name)
+function prepareEvenData()
 {
-    for ($i = 0; $i < 3; $i++) {
+    $data = [];
+    while (count($data) < 3) {
         $number = rand(1, 100);
-        line("Question: {$number}");
-        $answer = prompt("Your answer");
-        $mod = $number % 2 === 0 ? "yes" : "no";
-        if ($mod === $answer) {
-            line("Correct!");
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$mod}'.");
-            line("Let's try again, {$name}!");
-            return null;
+
+        $question = $number;
+        $expect = $number % 2 === 0 ? "yes" : "no";
+
+        if (array_key_exists($question, $data)) {
+            continue;
         }
+        
+        $data[$question] = $expect;
     }
-    line("Congratulations, {$name}!");
+    return $data;
 }
 
 function startEven()
 {
     $man = greet("even");
     line("Answer \"yes\" if the number is even, otherwise answer \"no\".");
-    playEven($man);
+    playEngine(prepareEvenData(), $man);
 }

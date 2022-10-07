@@ -25,11 +25,14 @@ function preparePrimeData()
     $data = [];
     while (count($data) < 3) {
         $number = rand(1, 100);
+
         $question = $number;
         $expect = isPrime($number) ? "yes" : "no";
+
         if (array_key_exists($question, $data)) {
             continue;
         }
+        
         $data[$question] = $expect;
     }
     return $data;

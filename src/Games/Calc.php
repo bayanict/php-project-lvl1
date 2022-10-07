@@ -33,9 +33,11 @@ function prepareCalcData()
 
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
         $expect = (string) getExpected($operators, $operator, $operand1, $operand2);
+
         if (array_key_exists($question, $data)) {
             continue;
         }
+        
         $data[$question] = $expect;
     }
     return $data;
