@@ -50,5 +50,6 @@ function playCalc(string $name)
 function startCalc()
 {
     $man = greet("calc");
+    line("What is the result of the expression?");
     playCalc($man);
 }

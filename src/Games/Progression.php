@@ -38,5 +38,6 @@ function playProgression(string $name)
 function startProgression()
 {
     $man = greet("progression");
+    line("What number is missing in the progression?");
     playProgression($man);
 }

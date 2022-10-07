@@ -43,5 +43,6 @@ function playPrime(string $name)
 function startPrime()
 {
     $man = greet("prime");
+    line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
     playPrime($man);
 }

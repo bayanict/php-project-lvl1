@@ -40,5 +40,6 @@ function playGcd(string $name)
 function startGcd()
 {
     $man = greet("gcd");
+    line("Find the greatest common divisor of given numbers.");
     playGcd($man);
 }

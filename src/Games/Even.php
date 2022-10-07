@@ -27,5 +27,6 @@ function playEven(string $name)
 function startEven()
 {
     $man = greet("even");
+    line("Answer \"yes\" if the number is even, otherwise answer \"no\".");
     playEven($man);
 }
