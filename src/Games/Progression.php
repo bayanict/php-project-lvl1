@@ -27,7 +27,7 @@ function prepareProgressionData()
         if (array_key_exists($question, $data)) {
             continue;
         }
-        
+
         $data[$question] = $expect;
     }
     return $data;
