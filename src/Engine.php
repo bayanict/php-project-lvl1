@@ -15,13 +15,13 @@ function greet(string $game)
 
 function playGame(array $preparedData, string $name)
 {
-    foreach ($preparedData as $question => $expect) {
+    foreach ($preparedData as $question => $rightAnswer) {
         line("Question: {$question}");
         $answer = prompt("Your answer");
-        if ($expect === $answer) {
+        if ($rightAnswer === $answer) {
             line("Correct!");
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$expect}'.");
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
             line("Let's try again, {$name}!");
             return null;
         }

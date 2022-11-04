@@ -32,13 +32,13 @@ function prepareCalcData()
         $operator = array_rand($operators);
 
         $question = "{$operand1} {$operators[$operator]} {$operand2}";
-        $expect = (string) getExpected($operators, $operator, $operand1, $operand2);
+        $rightAnswer = (string) getExpected($operators, $operator, $operand1, $operand2);
 
         if (array_key_exists($question, $data)) {
             continue;
         }
 
-        $data[$question] = $expect;
+        $data[$question] = $rightAnswer;
     }
     return $data;
 }

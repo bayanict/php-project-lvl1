@@ -14,13 +14,13 @@ function prepareEvenData()
         $number = rand(1, 100);
 
         $question = $number;
-        $expect = $number % 2 === 0 ? "yes" : "no";
+        $rightAnswer = $number % 2 === 0 ? "yes" : "no";
 
         if (array_key_exists($question, $data)) {
             continue;
         }
 
-        $data[$question] = $expect;
+        $data[$question] = $rightAnswer;
     }
     return $data;
 }

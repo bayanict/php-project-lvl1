@@ -20,7 +20,7 @@ function prepareProgressionData()
         }
 
         $index = rand(0, 9);
-        $expect = (string) $progression[$index];
+        $rightAnswer = (string) $progression[$index];
         $progression[$index] = "..";
         $question = implode(" ", $progression);
 
@@ -28,7 +28,7 @@ function prepareProgressionData()
             continue;
         }
 
-        $data[$question] = $expect;
+        $data[$question] = $rightAnswer;
     }
     return $data;
 }
