@@ -5,7 +5,7 @@ namespace BrainGames\Games\Prime;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
-use function BrainGames\Engine\playEngine;
+use function BrainGames\Engine\playGame;
 
 function isPrime(int $num)
 {
@@ -42,5 +42,5 @@ function startPrime()
 {
     $man = greet("prime");
     line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
-    playEngine(preparePrimeData(), $man);
+    playGame(preparePrimeData(), $man);
 }

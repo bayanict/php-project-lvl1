@@ -5,7 +5,7 @@ namespace BrainGames\Games\Calc;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
-use function BrainGames\Engine\playEngine;
+use function BrainGames\Engine\playGame;
 
 function getExpected(array $array, string $key, int $value1, int $value2)
 {
@@ -47,5 +47,5 @@ function startCalc()
 {
     $man = greet("calc");
     line("What is the result of the expression?");
-    playEngine(prepareCalcData(), $man);
+    playGame(prepareCalcData(), $man);
 }

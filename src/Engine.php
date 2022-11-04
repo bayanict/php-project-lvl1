@@ -13,7 +13,7 @@ function greet(string $game)
     return $name;
 }
 
-function playEngine(array $preparedData, string $name)
+function playGame(array $preparedData, string $name)
 {
     foreach ($preparedData as $question => $expect) {
         line("Question: {$question}");

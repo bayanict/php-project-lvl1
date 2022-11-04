@@ -5,7 +5,7 @@ namespace BrainGames\Games\Progression;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
-use function BrainGames\Engine\playEngine;
+use function BrainGames\Engine\playGame;
 
 function prepareProgressionData()
 {
@@ -37,5 +37,5 @@ function startProgression()
 {
     $man = greet("progression");
     line("What number is missing in the progression?");
-    playEngine(prepareProgressionData(), $man);
+    playGame(prepareProgressionData(), $man);
 }

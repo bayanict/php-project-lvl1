@@ -5,7 +5,7 @@ namespace BrainGames\Games\Even;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
-use function BrainGames\Engine\playEngine;
+use function BrainGames\Engine\playGame;
 
 function prepareEvenData()
 {
@@ -29,5 +29,5 @@ function startEven()
 {
     $man = greet("even");
     line("Answer \"yes\" if the number is even, otherwise answer \"no\".");
-    playEngine(prepareEvenData(), $man);
+    playGame(prepareEvenData(), $man);
 }

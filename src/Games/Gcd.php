@@ -5,7 +5,7 @@ namespace BrainGames\Games\Gcd;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\greet;
-use function BrainGames\Engine\playEngine;
+use function BrainGames\Engine\playGame;
 
 function gcd(int $first, int $second)
 {
@@ -61,5 +61,5 @@ function startGcd()
 {
     $man = greet("gcd");
     line("Find the greatest common divisor of given numbers.");
-    playEngine(prepareGcdData(), $man);
+    playGame(prepareGcdData(), $man);
 }
